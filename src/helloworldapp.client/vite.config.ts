@@ -1,11 +1,13 @@
-import { fileURLToPath, URL } from 'node:url';
-
-import { defineConfig } from 'vite';
 import plugin from '@vitejs/plugin-react';
-import fs from 'fs';
-import path from 'path';
 import child_process from 'child_process';
+import { config as configDotenv } from 'dotenv';
+import fs from 'fs';
+import { fileURLToPath, URL } from 'node:url';
+import path from 'path';
 import { env } from 'process';
+import { defineConfig } from 'vite';
+
+configDotenv();
 
 const baseFolder =
     env.APPDATA !== undefined && env.APPDATA !== ''
